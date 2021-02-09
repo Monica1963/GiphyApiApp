@@ -12,6 +12,7 @@ export const useFetch = (endpoint, initialState = []) => {
 
     const fetchData = async () => {
         try{
+          setFetching(true);
           const result = await fetch (`${enviroment.BASE_URL}/${endpoint}`); 
           const  rep = await result.json(); //  body 
           setData(rep); //array de gifs

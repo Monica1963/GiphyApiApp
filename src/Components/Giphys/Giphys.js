@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { Row } from 'react-bootstrap';
 
@@ -10,16 +10,29 @@ import {enviroment} from './../../constants'
 
 
 //Componente de lógica
-const Giphys = () => {
+const Giphys = ({search}) => {
+  
   const  [url, setUrl] = useState(enviroment.ENDPOINT);
+
+  useEffect ( () => {
+    console.log("Busca:" , search);
+    const searchUrl = !search ? enviroment.ENDPOINT : `${enviroment.ENDPOINTSEARCH}&q=${search}`; //SI HAY BUSQUEDA CAMBIA EL ENDPOINT 
+    console.log(searchUrl);
+    setUrl(searchUrl);
+  }, [search]);
+
   const [info, fetching] = useFetch(url);
   const {data, pagination: pages} = info;
   
   const handlePages= (newUrl) => {
-
-    setUrl(`${enviroment.ENDPOINT}${newUrl}`);
+    if(!search){
+      setUrl(`${enviroment.ENDPOINT}${newUrl}`);
+    }else{
+      setUrl(`${enviroment.ENDPOINTSEARCH}&q=${search}${newUrl}`);
+    };
+    
     console.log(url);
-    //console.log(`empieza con count ${pages.count} y offset ${pages.offset}`);
+    
     
   }
     

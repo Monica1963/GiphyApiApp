@@ -1,3 +1,4 @@
+import moment from 'moment';
 import { Col, Card, Button} from 'react-bootstrap';
 
 //Componente de presentación
@@ -12,7 +13,7 @@ const Gif = ({ title, images, import_datetime }) => {
                         {title} 
                     </Card.Title>
                     <Card.Text>
-                        Fecha de creación: {import_datetime}
+                       <small> Fecha de creación: {moment(import_datetime).format("DD/MM/YYYY")}</small>
                     </Card.Text>
                     <Button type="button" variant="primary" block>
                         Ver más

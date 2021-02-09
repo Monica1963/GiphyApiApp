@@ -1,19 +1,15 @@
-import { useState } from 'react';
+
 import { Row, Col, Button, Pagination } from 'react-bootstrap';
 import { enviroment} from './../constants';
 
 const Paginate = ({count, offset, handlePages}) => {
 
- 
-    //const [offSet, setOffset] = useState(enviroment.LIMIT);
+  
     
 
     const handlerNext = () =>{
        console.log("voy a ir adelante");
-              // setOffset(offSet + enviroment.LIMIT);
-        // console.log(`aca va la suma ${offSet} + ${count}`);
-        
-        // console.log(`valgo ${offSet}`);
+           
         const next = `${enviroment.OFFSET}${offset + count }`;
          console.log(`nextS  vale ${offset + count}`);
         handlePages(next);
@@ -24,12 +20,10 @@ const Paginate = ({count, offset, handlePages}) => {
     const handlerPrev = () => {
         console.log("voy a ir para atras");
        
-        //setOffset(offSet - enviroment.LIMIT);
-        //console.log(`ahora vale ${offSet}`);
-        //console.log(`atras vale ${offSet}`);
+       
         const prev = `${enviroment.OFFSET}${offset - count}`;
-    //    console.log(`prevS vale ${offSet}`);
-    //    console.log(`prevs vale ${offset}`);
+  
+   
         handlePages(prev);
         console.log(prev);
     };
@@ -42,10 +36,10 @@ const Paginate = ({count, offset, handlePages}) => {
        
     return (
        
-        <Row>
+        <Row > 
              <Col>
 
-                <Pagination>
+                <Pagination className="justify-content-center">
                 
                     {offset > 0 && <Pagination.Prev onClick={handlerPrev} />}
                     <Button variant="success" onClick={handlerReset} >Reset</Button>
