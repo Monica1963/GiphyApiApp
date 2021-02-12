@@ -16,7 +16,7 @@ function App() {
   return (
        
     <Container>
-        <h1>Giphy API App</h1>
+        <h1>Giphy App</h1>
         <Search handlerSearch={handlerSearch}/>
        
           
