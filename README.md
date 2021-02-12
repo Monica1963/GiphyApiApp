@@ -1,3 +1,13 @@
+Proyecto de práctica del curso de React - PunchIT
+Se conecta a la API Giphy
+Muestra los trending gifs, paginados.
+Permite avanzar y retroceder páginas, o volver al inicio.
+También se puede buscar mediante texto ingresado a tal fin.
+Se agregará:
+-Funcionalidad a botón para ampliar gif seleccionado.
+-Agregar a preferidos
+-Aside con preferidos
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
