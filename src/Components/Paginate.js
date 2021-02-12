@@ -4,34 +4,33 @@ import { enviroment} from './../constants';
 
 const Paginate = ({count, offset, handlePages}) => {
 
-  
-    
+     
 
     const handlerNext = () =>{
-       console.log("voy a ir adelante");
+       // console.log("voy a ir adelante");
            
         const next = `${enviroment.OFFSET}${offset + count }`;
-         console.log(`nextS  vale ${offset + count}`);
+        // console.log(`nextS  vale ${offset + count}`);
         handlePages(next);
        
 
     };
 
     const handlerPrev = () => {
-        console.log("voy a ir para atras");
+       // console.log("voy a ir para atras");
        
        
         const prev = `${enviroment.OFFSET}${offset - count}`;
   
    
         handlePages(prev);
-        console.log(prev);
+       //  console.log(prev);
     };
 
     const handlerReset = () => {
         const reset = `${enviroment.OFFSET}0`;
         handlePages(reset);
-        console.log(reset);
+       // console.log(reset);
     };
        
     return (

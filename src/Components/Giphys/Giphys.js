@@ -15,9 +15,9 @@ const Giphys = ({search}) => {
   const  [url, setUrl] = useState(enviroment.ENDPOINT);
 
   useEffect ( () => {
-    console.log("Busca:" , search);
+    // console.log("Busca:" , search);
     const searchUrl = !search ? enviroment.ENDPOINT : `${enviroment.ENDPOINTSEARCH}&q=${search}`; //SI HAY BUSQUEDA CAMBIA EL ENDPOINT 
-    console.log(searchUrl);
+    // console.log(searchUrl);
     setUrl(searchUrl);
   }, [search]);
 
@@ -31,7 +31,7 @@ const Giphys = ({search}) => {
       setUrl(`${enviroment.ENDPOINTSEARCH}&q=${search}${newUrl}`);
     };
     
-    console.log(url);
+    // console.log(url);
     
     
   }

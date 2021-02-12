@@ -7,7 +7,7 @@ const Search = ({handlerSearch}) => {
 
     const handlerSubmit = (e) => {
         e.preventDefault();
-        console.log("dispare el enter");
+        //console.log("dispare el enter");
         //if(gifs.trim() === "") return;
         handlerSearch(gifs);
     };
